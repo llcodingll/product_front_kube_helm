@@ -69,7 +69,7 @@ function App() {
       alert("재고 부족")
       return
     }
-    sellingApi();
+    sellingApi(id);
     // const newProducts = products.map((el)=>el.id === id ? {...el, quantity: el.quantity-1}:el)
     // setProducts(newProducts)
   }
