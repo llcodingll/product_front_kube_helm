@@ -13,13 +13,14 @@ const initProduct = {
   name:"",
   price:0,
 }
-
-axios.defaults.baseURL = import.meta.PROD ? location.hostname: "http://localhost:8080";
+const getBaseURL = () => {
+  return import.meta.env.PROD ? `http://${location.hostname}`: "http://localhost:8080";
+}
 
 const getAllProductsApi = async () =>{
   const { data } = await axios({
     method:"GET",
-    url:"/api/v1/products"
+    url:`${getBaseURL()}/api/v1/products`
   })
   return data
 }
