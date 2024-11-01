@@ -14,7 +14,7 @@ const initProduct = {
   price:0,
 }
 
-axios.defaults.baseURL = import.meta.PROD || "http://localhost:8080"
+axios.defaults.baseURL = import.meta.PROD ? location.hostname: "http://localhost:8080";
 
 const getAllProductsApi = async () =>{
   const { data } = await axios({
